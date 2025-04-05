@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ShowMonsters from './ShowMonsters/ShowMonsters'
+import SearchField from './assets/searchField/SearchField'
 
 function App() {
   const[monsters, setMonsters] = useState([]);
@@ -39,15 +40,12 @@ function App() {
 
   //console.log(monsters)
 
+  //<input type='search' placeholder='please search' onChange={onchangeHandler}></input>
 
   return (
     <div>
-      <input type='search' placeholder='please search' onChange={onchangeHandler}>
-      
-      </input>
-      
+      <SearchField placeholder='please search' handleFromComponent={onchangeHandler}/>
       <ShowMonsters monsterForChild={filteredMonsters}/>
-      
     </div>   
   )
 }
